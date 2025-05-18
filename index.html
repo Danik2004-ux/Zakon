@@ -14,10 +14,6 @@
       height: 100%;
       font-family: 'Open Sans', sans-serif;
       background: linear-gradient(135deg, #001f4d, #000000); /* градиентный фон */
-      display: flex;
-      flex-direction: column; /* вертикальное выравнивание */
-      justify-content: center;
-      align-items: center;
       color: #ffffff;
       text-align: center;
       padding: 20px;
@@ -28,11 +24,10 @@
       font-size: 0.9em;
       color: #999;
     }
-    
     .container:hover {
       transform: scale(1.02); /* эффект увеличения при наведении */
     }
-     h1 {
+    h1 {
       font-family: 'Montserrat', sans-serif;
       font-weight: 600;
       font-size: 2.8rem;
@@ -72,15 +67,26 @@
       width: 350px; /* фиксированная ширина */
       height: auto; /* автоматическая высота */
     }
-  </style>
+    .square {
+      display: inline-block; /* изменено для подстраивания под содержимое */
+      background-color: #253d57ff; /* серо-синий цвет */
+      padding: 20px; /* отступы внутри квадрата */
+      margin: 20px auto; /* центрирование квадрата */
+      border-radius: 10px; /* закругленные углы (по желанию) */
+    }
+    </style>
 </head>
 <body>
-    <h1>Добро пожаловать!</h1>
+  
+    
+    <div class="square"><h1>Добро пожаловать!</h1>
     <figure>
         <img src="НАЧАЛО.jpg" alt="Территориальное деление Объединённых Арабских Эмиратов">
     </figure>
-    
     <a href="титульник.html"> Начать </a>
+  </div> <!-- Добавленный квадрат -->
+    
+    
     <div class="footer">
         <p>© 2025 Все права защищены</p>
     </div>
