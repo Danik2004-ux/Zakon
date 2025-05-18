@@ -1,23 +1,97 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница</title>
-    <link rel="stylesheet" href="финал.css">
-    <link rel="shortcut icon" href="unnamed.jpg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Главная страница</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap');
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0;
+      height: 100%;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #001f4d, #004080); /* градиентный фон */
+      display: flex;
+      flex-direction: column; /* вертикальное выравнивание */
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #999;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      max-width: 400px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.02); /* эффект увеличения при наведении */
+    }
+     h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    a {
+      text-decoration: none;
+      background-color: #ff6b6b;
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(255,107,107,0.6);
+      display: inline-block; /* для правильного отображения */
+    }
+    a:hover, a:focus {
+      background-color: #ff4c4c;
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(255,76,76,0.8);
+      outline: none;
+    }
+    a:active {
+      transform: scale(0.98);
+      box-shadow: 0 3px 9px rgba(255,76,76,0.9);
+    }
+    figure {
+      margin: 20px 0; /* отступы для фигуры */
+    }
+    img {
+      display: block;
+      margin: auto; /* центрирование изображения */
+      width: 350px; /* фиксированная ширина */
+      height: auto; /* автоматическая высота */
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        
-        <h1>Добро пожаловать!</h1>
-        <nav>
-            <a href="титульник.html"> Вход </a>
-        </nav>
-        <footer class="footer">
-            <p>&copy; 2024 Мой сайт. Все права защищены.</p>
-        </footer>
-            
+    <h1>Добро пожаловать!</h1>
+    <figure>
+        <img src="НАЧАЛО.jpg" alt="Территориальное деление Объединённых Арабских Эмиратов">
+    </figure>
+    <div class="container" role="main">
+        <a href="титульник.html"> Начать </a>
+    </div>
+    <div class="footer">
+        <p>© 2025 Все права защищены</p>
     </div>
 </body>
 </html>
