@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Тест по Турции</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #283e51, #4b6cb7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 2rem 1rem;
+  }
+  .quiz-container {
+    background: rgba(0,0,0,0.7);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  }
+   h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: #82c0ff;
+  }
+  .question {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .answers {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+  }
+  .answers li {
+    margin-bottom: 0.75rem;
+  }
+  label {
+    cursor: pointer;
+    font-size: 1rem;
+    user-select: none;
+    position: relative;
+    padding-left: 30px;
+    display: inline-block;
+  }
+   input[type="radio"] {
+    margin-right: 0.7rem;
+    transform: scale(1.2);
+    vertical-align: middle;
+  }
+  button {
+    background-color: #5a9aff;
+    border: none;
+    color: #f0f0f0;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #3e7fe3;
+  }
+   .result {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    color: #a1ff87;
+  }
+  /* Mark correct answers */
+  label.correct {
+    color: #8ef579;
+    font-weight: bold;
+  }
+  /* Mark wrong answers */
+  label.wrong {
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+  .explanation {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ffcc00;
+    display: none; /* Initially hidden */
+  }
+    /* Style for anchor inside button */
+  button a {
+    color: #f0f0f0; /* Цвет текста белый */
+    text-decoration: none; /* Убираем подчеркивание */
+    display: block; /* Делаем ссылку блочным элементом для корректного отображения */
+    width: 100%; /* Занимаем всю ширину кнопки */
+  }
+</style>
+</head>
+<body>
+  <main class="quiz-container">
+    <h1>Тест по Турции</h1>
+    <form id="quiz-form">
+      <div class="question-block">
+        <p class="question">1. За неуважение к какой исторической личности в Турции вам грозят большие проблемы с законом?</p>
+        <ul class="answers">
+          <li><label><input type="radio" name="q1" value="Мурад-бей «Мизанджи»" /> Мурад-бей «Мизанджи»</label></li>
+          <li><label><input type="radio" name="q1" value="Мустафа Кемаль Ататюрк" /> Мустафа Кемаль Ататюрк</label></li>
+          <li><label><input type="radio" name="q1" value="Энвер-паша" /> Энвер-паша</label></li>
+          <li><label><input type="radio" name="q1" value="Ахмед Риза-бей" /> Ахмед Риза-бей</label></li>
+        </ul>
+      </div>
+      <div class="question-block">
+        <p class="question">2. Отдыхая в Турции вы решили сделать фотографию красивого пейзажа, но на его фоне находится правительственное здание. Можно ли вам сделать фото?</p>
+        <ul class="answers">
+          <li><label><input type="radio" name="q2" value="да" /> Да</label></li>
+          <li><label><input type="radio" name="q2" value="нет" /> Нет</label></li>
+        </ul>
+      </div>
+      <div class="question-block">
+                <p class="question">3. Отдыхая в отеле "все включено" вы решили взять с собой на прогулку по городу напиток из ресторана отеля. Разрешено ли вам это сделать?</p>
+        <ul class="answers">
+          <li><label><input type="radio" name="q3" value="да" /> Да</label></li>
+          <li><label><input type="radio" name="q3" value="нет" /> Нет</label></li>
+        </ul>
+      </div>
+      <button type="submit">Проверить ответы</button>
+      <p></p>
+      <button><a href="Объединённые арабские эмираты.html">Вернуться к законам</a></button>
+    </form>
+    <div id="result" class="result"></div>
+    <div id="explanation1" class="explanation">
+      За неуважение к Мустафа Кемаль Ататюрк могут возникнуть проблемы с законом.
+    </div>
+    <div id="explanation2" class="explanation">
+      Вам нельзя сделать фотографию, так как в Турции запрещено фотографировать правительственные здания.
+    </div>
+    <div id="explanation3" class="explanation">
+      Вынос еды и напитков из ресторанов в отелях с системой «все включено» запрещен.
+    </div>
+  </main>
+  <script>
+  const quizForm = document.getElementById('quiz-form');
+  const resultDiv = document.getElementById('result');
+  const explanation1 = document.getElementById('explanation1');
+  const explanation2 = document.getElementById('explanation2');
+  const explanation3 = document.getElementById('explanation3');
+  // Set correct answers for the questions
+  const correctAnswers = {
+    q1: 'Мустафа Кемаль Ататюрк',
+    q2: 'нет',
+    q3: 'нет'
+  };
+  quizForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    let score = 0;
+    const formData = new FormData(quizForm);
+    // Clear previous markings and hide explanations
+    const labels = quizForm.querySelectorAll('label');
+       labels.forEach(label => {
+      label.classList.remove('correct', 'wrong');
+    });
+    explanation1.style.display = 'none';
+    explanation2.style.display = 'none';
+    explanation3.style.display = 'none';
+    Object.entries(correctAnswers).forEach(([question, correctValue]) => {
+      const selectedValue = formData.get(question);
+      // Mark answers: iterate all options of this question
+      const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
+      inputs.forEach(input => {
+        const label = input.closest('label');
+        if(input.value === correctValue) {
+          label.classList.add('correct');
+        }
+        if(selectedValue === input.value && selectedValue !== correctValue) {
+          label.classList.add('wrong');
+        }
+      });
+      if (selectedValue === correctValue) {
+               score++;
+      }
+    });
+    resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
+    // Show explanations as needed
+    if (formData.get('q1') !== correctAnswers.q1) {
+      explanation1.style.display = 'block';
+    }
+    if (formData.get('q2') !== correctAnswers.q2) {
+      explanation2.style.display = 'block';
+    }
+    if (formData.get('q3') !== correctAnswers.q3) {
+      explanation3.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
