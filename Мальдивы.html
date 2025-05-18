@@ -6,26 +6,36 @@
     <title>Мальдивы</title>
     <link rel="shortcut icon" href="unnamed.jpg" type="image/x-icon" />
     <style>
-        body, html {
-            height: 100%;
+        body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background: #f0f0f0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a2540 0%, #001c3d 70%, #002a5e 100%);
+            color: #e6eaf0;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
         }
         .container {
-            max-width: 800px;
-            position: relative;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center; /* Центрируем текст и элементы внутри контейнера */
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+                        box-shadow:
+                0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 720px;
+            width: 100%;
+            padding: 40px 35px;
+            box-sizing: border-box;
+            text-align: center;
+            transition: transform 0.3s ease;
         }
         h1 {
-            color: #333;
+            color: #ffffff;
         }
         nav {
             margin: 0;
@@ -115,7 +125,7 @@
         }
         h3 {
              text-align: left;
-            color: #333;
+            color: #ffffff;
         }
     </style>
 </head>
