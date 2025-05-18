@@ -1,14 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Тайланд</title>
-    <link rel="stylesheet" href="финал.css">
-
+    <link rel="shortcut icon" href="unnamed.jpg" type="image/x-icon" />
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Центрируем текст и элементы внутри контейнера */
+        }
+        h1 {
+            color: #333;
+        }
+        nav {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center; /* Центрируем кнопки */
+        }
+        .nav1 {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: left; /* Центрируем кнопки */
+        }
+        nav a.button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background-color: #5bae5a;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
+            user-select: none;
+            width: 100%;          /* Занимают всю ширину контейнера */
+            max-width: 600px;     /* Максимальная ширина */
+            text-align: center;
+        }
+        nav a.button:hover {
+            background-color: #b30000;
+            box-shadow: 0 4px 10px rgba(242, 67, 67, 0.6);
+        }
+        nav a.button:active {
+            background-color: #4c0000;
+            box-shadow: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+        .centered-button {
+            background: #4a90e2;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(74,144,226,0.4);
+            text-align: center;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+            user-select: none;
+            margin: 20px auto 0 auto;    /* Центрируем кнопку по горизонтали */
+            display: block;               /* Чтобы margin auto работал */
+            max-width: 600px;
+            width: 100%;
+        }
+        .centered-button:hover,
+        .centered-button:focus {
+            background: #357ABD;
+            box-shadow: 0 8px 20px rgba(53,122,189,0.6);
+            transform: translateY(-2px);
+            outline: none;
+        }
+        .centered-button:active {
+            background: #2a5f95;
+            box-shadow: 0 4px 8px rgba(42,95,149,0.7);
+            transform: translateY(0);
+        }
+        .button-section {
+            display: flex;
+            flex-direction: column;
+            align-items: left; /* Выровнять ссылки по левому краю */
+            gap: 12px; /* Промежуток между кнопками */
+            margin-top: 20px; /* Отступ сверху для раздела кнопок */
+        }
+        p {
+            text-align: justify; /* Выравнивание текста по ширине */
+        }
+    </style>
 </head>
 <body>
-        
     <div class="container">
         <figure>
             <img src="Т.webp" alt="Территориальное деление Объединённых Арабских Эмиратов" width="600" height="310">
@@ -19,31 +126,19 @@
             Отдых в Таиланде подойдет абсолютно любым категориям туристов: семьям с маленькими детьми, 
             любителям достопримечательностей, молодежи и тусовщикам, а также романтикам и ценителям уединения.
         </p>
-        <h2>Часто нарушаемые туристами законы в Тайланде</h2>
-        <p>1. Неправильное поведение в храмах. 
-            <a href="The laws of Thailand\The laws of Thailand 1.html">Подробнее</a> 
-        </p>
-        <p>2. Неуважительное отношение к королевской семье. 
-            <a href="The laws of Thailand\The laws of Thailand 2.html">Подробнее</a> 
-        </p>
-        <p>3.  Участие в азартных играх. 
-            <a href="The laws of Thailand\The laws of Thailand 3.html">Подробнее</a> 
-        </p>
-        <p>4. Публичное проявление нежности (поцелуи, объятия). 
-            <a href="The laws of Thailand\The laws of Thailand 4.html">Подробнее</a> 
-        </p>
-        <p>5. Курение на пляжах. 
-            <a href="The laws of Thailand\The laws of Thailand 5.html">Подробнее</a> 
-        </p>
-        <p>6. Ловля диких животных. 
-            <a href="The laws of Thailand\The laws of Thailand 6.html">Подробнее</a> 
-        </p>
+        <h2>Законы, которые чаще всего нарушают туристы в Тайланде:</h2>   
         <nav>
-            <a href="Тест Та\в1.html">Тест</a> 
-            <a href="титульник.html">Вернутьсь к выбору стран</a>
+            <a class="button" href="The laws of Thailand\The laws of Thailand 1.html">1. Неправильное поведение в храмах.</a> 
+            <a class="button" href="The laws of Thailand\The laws of Thailand 2.html">2. СНеуважительное отношение к королевской семье.</a> 
+            <a class="button" href="The laws of Thailand\The laws of Thailand 3.html">3.  Участие в азартных играх. </a> 
+            <a class="button" href="The laws of Thailand\The laws of Thailand 4.html">4. Публичное проявление нежности (поцелуи, объятия). </a> 
+            <a class="button" href="The laws of Thailand\The laws of Thailand 5.html">5. Курение на пляжах. </a> 
+            <a class="button" href="The laws of Thailand\The laws of Thailand 6.html">6. Ловля диких животных. </a> 
+            <a class="button" href="тест Тайланд.html">Тест</a>
+            <a class="button" href="титульник.html">Вернуться к выбору стран</a>
         </nav>
         <footer class="footer">
-            <p>&copy; 2024 Мой сайт. Все права защищены.</p>
+            <p>&copy; 2025 Мой сайт. Все права защищены.</p>
         </footer>
     </div>
 </body>
