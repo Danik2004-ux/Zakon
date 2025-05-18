@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Тест по законам</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #283e51, #4b6cb7);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 2rem 1rem;
+        }
+        .quiz-container {
+            background: rgba(0,0,0,0.7);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
+        h1 {
+                     text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: #82c0ff;
+        }
+        .question {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .answers {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+        .answers li {
+            margin-bottom: 0.75rem;
+        }
+        label {
+            cursor: pointer;
+            font-size: 1rem;
+            user-select: none;
+            position: relative;
+            padding-left: 30px;
+            display: inline-block;
+        }
+                input[type="radio"] {
+            margin-right: 0.7rem;
+            transform: scale(1.2);
+            vertical-align: middle;
+        }
+        button {
+            background-color: #5a9aff;
+            border: none;
+            color: #f0f0f0;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #3e7fe3;
+        }
+        .result {
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            color: #a1ff87;
+        }
+                /* Mark correct answers */
+        label.correct {
+            color: #8ef579;
+            font-weight: bold;
+        }
+        /* Mark wrong answers */
+        label.wrong {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+        .explanation {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #ffcc00;
+            display: none; /* Initially hidden */
+        }
+        /* Style for anchor inside button */
+        button a {
+            color: #f0f0f0; /* Цвет текста белый */
+            text-decoration: none; /* Убираем подчеркивание */
+            display: block; /* Делаем ссылку блочным элементом для корректного отображения */
+            width: 100%; /* Занимаем всю ширину кнопки */
+        }
+    </style>
+    </head>
+<body>
+<main class="quiz-container">
+    <h1>Тест по законам</h1>
+    <form id="quiz-form">
+        <div class="question-block">
+            <p class="question">1. Проходя мимо места археологических раскопок вы заметили, что его никто не охраняет и решили попасть непосредственно на место раскопок. Нарушите ли вы этим закон?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q1" value="да" /> Да</label></li>
+                <li><label><input type="radio" name="q1" value="нет" /> Нет</label></li>
+            </ul>
+        </div>
+        <div class="question-block">
+            <p class="question">2. Можете ли вы в качестве сувенира взять с собой домой ракушки с пляжа?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q2" value="да" /> Да</label></li>
+                <li><label><input type="radio" name="q2" value="нет" /> Нет</label></li>
+            </ul>
+                    </div>
+        <div class="question-block">
+            <p class="question">3. Если после предупреждения полиции вы случайно повторно закурили в общественном месте, какое наказание грозит вам?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q3" value="Штраф в размере 500 египетских фунтов" /> Штраф в размере 500 египетских фунтов</label></li>
+                <li><label><input type="radio" name="q3" value="Краткосрочный арест" /> Краткосрочный арест</label></li>
+                <li><label><input type="radio" name="q3" value="Повторное предупреждение" /> Повторное предупреждение</label></li>
+            </ul>
+        </div>
+        <button type="submit">Проверить ответы</button>
+        <p></p>
+        <button><a href="Объединённые арабские эмираты.html">Вернуться к законам</a></button>
+    </form>
+    <div id="result" class="result"></div>
+    <div id="explanation1" class="explanation">Вы не можете попасть на место археологических раскопок, так как за нахождение на археологическом объекте или музее без разрешения, а также за восхождение на древности без лицензии, нарушителю грозит лишение свободы на срок не менее одного месяца и штраф в размере не менее 10 000 и не более 100 000 египетских фунтов.</div>
+    <div id="explanation2" class="explanation">Вывоз кораллов и ракушек запрещен в Египте.</div>
+    <div id="explanation3" class="explanation">За повторное нарушение грозит краткосрочный арест (до 24 часов) для выяснения обстоятельств.</div>
+</main>
+<script>
+    const quizForm = document.getElementById('quiz-form');
+    const resultDiv = document.getElementById('result');
+    const explanation1 = document.getElementById('explanation1');
+    const explanation2 = document.getElementById('explanation2');
+    const explanation3 = document.getElementById('explanation3');
+
+    // Set correct answers for the questions
+    const correctAnswers = {
+        q1: 'да',
+        q2: 'нет',
+        q3: 'Краткосрочный арест'
+    };
+
+    quizForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let score = 0;
+        const formData = new FormData(quizForm);
+
+        // Clear previous markings and hide explanations
+        const labels = quizForm.querySelectorAll('label');
+        labels.forEach(label => {
+            label.classList.remove('correct', 'wrong');
+        });
+        explanation1.style.display = 'none';
+        explanation2.style.display = 'none';
+        explanation3.style.display = 'none';
+        
+        Object.entries(correctAnswers).forEach(([question, correctValue]) => {
+            const selectedValue = formData.get(question);
+
+            // Mark answers: iterate all options of this question
+            const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
+            inputs.forEach(input => {
+                const label = input.closest('label');
+                if(input.value === correctValue) {
+                    label.classList.add('correct');
+                }
+                if(selectedValue === input.value && selectedValue !== correctValue) {
+                    label.classList.add('wrong');
+                }
+            });
+            
+            if (selectedValue === correctValue) {
+                score++;
+            }
+        });
+
+                resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
+        
+                // Show explanations as needed
+        if (formData.get('q1') !== correctAnswers.q1) {
+            explanation1.style.display = 'block';
+        }
+        if (formData.get('q2') !== correctAnswers.q2) {
+            explanation2.style.display = 'block';
+        }
+        if (formData.get('q3') !== correctAnswers.q3) {
+            explanation3.style.display = 'block';
+        }
+    });
+</script>
+</body>
+</html>
