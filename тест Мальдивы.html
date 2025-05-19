@@ -19,16 +19,16 @@
             overflow-x: hidden;
         }
         
-  .quiz-container {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  }
+        .quiz-container {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            max-width: 600px;
+                        width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+        }
         h1 {
-                        text-align: center;
+            text-align: center;
             margin-bottom: 1.5rem;
             font-size: 2.5rem;
             color: #82c0ff;
@@ -37,7 +37,7 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
         }
-        .answers {
+                .answers {
             list-style: none;
             padding: 0;
             margin-bottom: 1.5rem;
@@ -49,7 +49,7 @@
             cursor: pointer;
             font-size: 1rem;
             user-select: none;
-                       position: relative;
+            position: relative;
             padding-left: 30px;
             display: inline-block;
         }
@@ -58,7 +58,7 @@
             transform: scale(1.2);
             vertical-align: middle;
         }
-        button {
+               button {
             background-color: #5a9aff;
             border: none;
             color: #f0f0f0;
@@ -73,13 +73,13 @@
             background-color: #3e7fe3;
         }
         .result {
-                        margin-top: 1.5rem;
+            margin-top: 1.5rem;
             font-size: 1.3rem;
             font-weight: bold;
             text-align: center;
             color: #a1ff87;
         }
-        /* Mark correct answers */
+               /* Mark correct answers */
         label.correct {
             color: #8ef579;
             font-weight: bold;
@@ -98,8 +98,8 @@
         /* Style for anchor inside button */
         button a {
             color: #f0f0f0; /* Цвет текста белый */
-                        text-decoration: none; /* Убираем подчеркивание */
-            display: block; /* Делаем ссылку блочным элементом для корректного отображения */
+            text-decoration: none; /* Убираем подчеркивание */
+                        display: block; /* Делаем ссылку блочным элементом для корректного отображения */
             width: 100%; /* Занимаем всю ширину кнопки */
         }
     </style>
@@ -121,22 +121,32 @@
                 <li><label><input type="radio" name="q2" value="да" /> Да</label></li>
                 <li><label><input type="radio" name="q2" value="нет" /> Нет</label></li>
             </ul>
-        </div>
-                <div class="question-block">
+                    </div>
+        <div class="question-block">
             <p class="question">Можете ли вы заняться рыбалкой находясь на экскурсии без гида?</p>
             <ul class="answers">
                 <li><label><input type="radio" name="q3" value="да" /> Да</label></li>
                 <li><label><input type="radio" name="q3" value="нет" /> Нет</label></li>
             </ul>
         </div>
+        <div class="question-block">
+            <p class="question">Каковы правила относительно свинины на Мальдивах?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q4" value="разрешена" /> Свинина разрешена в меню всех ресторанов и кафе, включая местные.</label></li>
+                <li><label><input type="radio" name="q4" value="запрещена" /> Свинину нельзя употреблять в пищу, и ее привозить с собой также запрещено.</label></li>
+                <li><label><input type="radio" name="q4" value="можно" /> Свинина может быть куплена только на туристических курортах.</label></li>
+                <li><label><input type="radio" name="q4" value="разрешено" /> На Мальдивах запрещено только употребление свинины, но ее можно привозить из других стран.</label></li>
+            </ul>
+        </div>
         <button type="submit">Проверить ответы</button>
         <P>  </P>
         <button><a href="Мальдивы.html">Вернуться к законам</a></button>
     </form>
-    <div id="result" class="result"></div>
+        <div id="result" class="result"></div>
     <div id="explanation1" class="explanation">Вы можете выпить алкогольный напиток, так как их распитие запрещено, только на местных (не туристических) островах.</div>
     <div id="explanation2" class="explanation">На Мальдивах строго запрещена подводная охота для туристов, и наличие дайверской лицензии не играет роли.</div>
     <div id="explanation3" class="explanation">На Мальдивах разрешена рыбалка только на экскурсии с гидом, так как экскурсия проводится без гида, рыбалка запрещена.</div>
+    <div id="explanation4" class="explanation">Свинина запрещена к ввозу на Мальдивы вне зависимости от способа обработки или упаковки.</div>
 </main>
 <script>
     const quizForm = document.getElementById('quiz-form');
@@ -144,19 +154,18 @@
     const explanation1 = document.getElementById('explanation1');
     const explanation2 = document.getElementById('explanation2');
     const explanation3 = document.getElementById('explanation3');
-
+    const explanation4 = document.getElementById('explanation4');
     // Set correct answers for the questions
-        const correctAnswers = {
+    const correctAnswers = {
         q1: 'да',
         q2: 'нет',
-        q3: 'нет'
+        q3: 'нет',
+        q4: 'запрещена'
     };
-
     quizForm.addEventListener('submit', function(event) {
         event.preventDefault();
         let score = 0;
-        const formData = new FormData(quizForm);
-
+                const formData = new FormData(quizForm);
         // Clear previous markings and hide explanations
         const labels = quizForm.querySelectorAll('label');
         labels.forEach(label => {
@@ -165,38 +174,34 @@
         explanation1.style.display = 'none';
         explanation2.style.display = 'none';
         explanation3.style.display = 'none';
-
+        explanation4.style.display = 'none';
         Object.entries(correctAnswers).forEach(([question, correctValue]) => {
             const selectedValue = formData.get(question);
-
             // Mark answers: iterate all options of this question
-                        const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
+            const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
             inputs.forEach(input => {
                 const label = input.closest('label');
                 if(input.value === correctValue) {
                     label.classList.add('correct');
                 }
-                if(selectedValue === input.value && selectedValue !== correctValue) {
-                    label.classList.add('wrong');
-                }
-            });
-
+                            });
             if (selectedValue === correctValue) {
                 score++;
             }
         });
-
         resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
-
         // Show explanations as needed
         if (formData.get('q1') !== correctAnswers.q1) {
             explanation1.style.display = 'block';
         }
-                if (formData.get('q2') !== correctAnswers.q2) {
+        if (formData.get('q2') !== correctAnswers.q2) {
             explanation2.style.display = 'block';
         }
         if (formData.get('q3') !== correctAnswers.q3) {
             explanation3.style.display = 'block';
+        }
+                if (formData.get('q4') !== correctAnswers.q4) {
+            explanation4.style.display = 'block';
         }
     });
 </script>
