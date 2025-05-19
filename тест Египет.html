@@ -1,110 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Тест по законам Египта</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', Arial, sans-serif;
-            background: linear-gradient(135deg, #0a2540 0%, #001c3d 70%, #002a5e 100%);
-            color: #e6eaf0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            overflow-x: hidden;
-        }
-        
-  .quiz-container {
-    background: rgba(255, 255, 255, 0.12);
-    padding: 2rem 3rem;
-    border-radius: 12px;
-    max-width: 600px;
-    width: 100%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  }
-        h1 {
-                     text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            color: #82c0ff;
-        }
-        .question {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        .answers {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-        }
-        .answers li {
-            margin-bottom: 0.75rem;
-        }
-        label {
-            cursor: pointer;
-            font-size: 1rem;
-            user-select: none;
-            position: relative;
-            padding-left: 30px;
-            display: inline-block;
-        }
-                input[type="radio"] {
-            margin-right: 0.7rem;
-            transform: scale(1.2);
-            vertical-align: middle;
-        }
-        button {
-            background-color: #5a9aff;
-            border: none;
-            color: #f0f0f0;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            border-radius: 30px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #3e7fe3;
-        }
-        .result {
-            margin-top: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: bold;
-            text-align: center;
-            color: #a1ff87;
-        }
-                /* Mark correct answers */
-        label.correct {
-            color: #8ef579;
-            font-weight: bold;
-        }
-        /* Mark wrong answers */
-        label.wrong {
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-        .explanation {
-            margin-top: 1rem;
-            font-size: 1rem;
-            color: #ffcc00;
-            display: none; /* Initially hidden */
-        }
-        /* Style for anchor inside button */
-        button a {
-            color: #f0f0f0; /* Цвет текста белый */
-            text-decoration: none; /* Убираем подчеркивание */
-            display: block; /* Делаем ссылку блочным элементом для корректного отображения */
-            width: 100%; /* Занимаем всю ширину кнопки */
-        }
-    </style>
-    </head>
-<body>
 <main class="quiz-container">
     <h1>Тест по законам Египта</h1>
     <form id="quiz-form">
@@ -121,13 +14,22 @@
                 <li><label><input type="radio" name="q2" value="да" /> Да</label></li>
                 <li><label><input type="radio" name="q2" value="нет" /> Нет</label></li>
             </ul>
-                    </div>
+        </div>
         <div class="question-block">
             <p class="question">3. Если после предупреждения полиции вы случайно повторно закурили в общественном месте, какое наказание грозит вам?</p>
             <ul class="answers">
                 <li><label><input type="radio" name="q3" value="Штраф в размере 500 египетских фунтов" /> Штраф в размере 500 египетских фунтов</label></li>
                 <li><label><input type="radio" name="q3" value="Краткосрочный арест" /> Краткосрочный арест</label></li>
                 <li><label><input type="radio" name="q3" value="Повторное предупреждение" /> Повторное предупреждение</label></li>
+            </ul>
+            </div>
+        <div class="question-block">
+            <p class="question">4. Какое поведение рекомендуется при возникновении эмоциональной ситуации в общественных местах в Египте?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="q4" value="Произносить любые ругательства громко, чтобы все слышали." /> Произносить любые ругательства громко, чтобы все слышали.</label></li>
+                <li><label><input type="radio" name="q4" value="Использовать менее распространённые ругательства и произносить их с улыбкой." /> Использовать менее распространённые ругательства и произносить их с улыбкой.</label></li>
+                <li><label><input type="radio" name="q4" value="Молча уходить в сторону и игнорировать ситуацию." /> Молча уходить в сторону и игнорировать ситуацию.</label></li>
+                <li><label><input type="radio" name="q4" value="Обсуждать свои эмоции с местными жителями." /> Обсуждать свои эмоции с местными жителями.</label></li>
             </ul>
         </div>
         <button type="submit">Проверить ответы</button>
@@ -138,6 +40,7 @@
     <div id="explanation1" class="explanation">Вы не можете попасть на место археологических раскопок, так как за нахождение на археологическом объекте или музее без разрешения, а также за восхождение на древности без лицензии, нарушителю грозит лишение свободы на срок не менее одного месяца и штраф в размере не менее 10 000 и не более 100 000 египетских фунтов.</div>
     <div id="explanation2" class="explanation">Вывоз кораллов и ракушек запрещен в Египте.</div>
     <div id="explanation3" class="explanation">За повторное нарушение грозит краткосрочный арест (до 24 часов) для выяснения обстоятельств.</div>
+    <div id="explanation4" class="explanation">Если хочется выругаться, рекомендуется вспомнить не самые распространённые ругательства и произнести их с улыбкой.</div>
 </main>
 <script>
     const quizForm = document.getElementById('quiz-form');
@@ -145,19 +48,18 @@
     const explanation1 = document.getElementById('explanation1');
     const explanation2 = document.getElementById('explanation2');
     const explanation3 = document.getElementById('explanation3');
-
+    const explanation4 = document.getElementById('explanation4');
     // Set correct answers for the questions
     const correctAnswers = {
         q1: 'да',
         q2: 'нет',
-        q3: 'Краткосрочный арест'
+        q3: 'Краткосрочный арест',
+        q4: 'Использовать менее распространённые ругательства и произносить их с улыбкой.'
     };
-
     quizForm.addEventListener('submit', function(event) {
         event.preventDefault();
         let score = 0;
         const formData = new FormData(quizForm);
-
         // Clear previous markings and hide explanations
         const labels = quizForm.querySelectorAll('label');
         labels.forEach(label => {
@@ -166,10 +68,10 @@
         explanation1.style.display = 'none';
         explanation2.style.display = 'none';
         explanation3.style.display = 'none';
+        explanation4.style.display = 'none';
         
         Object.entries(correctAnswers).forEach(([question, correctValue]) => {
             const selectedValue = formData.get(question);
-
             // Mark answers: iterate all options of this question
             const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
             inputs.forEach(input => {
@@ -180,16 +82,15 @@
                 if(selectedValue === input.value && selectedValue !== correctValue) {
                     label.classList.add('wrong');
                 }
-            });
+                });
             
             if (selectedValue === correctValue) {
                 score++;
             }
         });
-
-                resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
+        resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
         
-                // Show explanations as needed
+        // Show explanations as needed
         if (formData.get('q1') !== correctAnswers.q1) {
             explanation1.style.display = 'block';
         }
@@ -199,7 +100,10 @@
         if (formData.get('q3') !== correctAnswers.q3) {
             explanation3.style.display = 'block';
         }
+        if (formData.get('q4') !== correctAnswers.q4) {
+            explanation4.style.display = 'block';
+        }
     });
-</script>
+    </script>
 </body>
 </html>
