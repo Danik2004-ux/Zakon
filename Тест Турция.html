@@ -106,57 +106,69 @@
 </head>
 <body>
   <main class="quiz-container">
-    <h1>Тест по законам Турции</h1>
+    <h1>Тест по законам ОАЭ</h1>
     <form id="quiz-form">
-      <div class="question-block">
-        <p class="question">1. За неуважение к какой исторической личности в Турции вам грозят большие проблемы с законом?</p>
+        <div class="question-block">
+        <p class="question">1. Вы купили вино в магазине, положили его в закрытую сумку, позже вы решили вернуться в отель. Можно ли вам поехать в отель на автобусе?</p>
         <ul class="answers">
-          <li><label><input type="radio" name="q1" value="Мурад-бей «Мизанджи»" /> Мурад-бей «Мизанджи»</label></li>
-          <li><label><input type="radio" name="q1" value="Мустафа Кемаль Ататюрк" /> Мустафа Кемаль Ататюрк</label></li>
-          <li><label><input type="radio" name="q1" value="Энвер-паша" /> Энвер-паша</label></li>
-          <li><label><input type="radio" name="q1" value="Ахмед Риза-бей" /> Ахмед Риза-бей</label></li>
+          <li><label><input type="radio" name="q1" value="да" /> Да</label></li>
+          <li><label><input type="radio" name="q1" value="нет" /> Нет</label></li>
         </ul>
       </div>
       <div class="question-block">
-        <p class="question">2. Отдыхая в Турции вы решили сделать фотографию красивого пейзажа, но на его фоне находится правительственное здание. Можно ли вам сделать фото?</p>
+        <p class="question">2. Находясь в отеле вы решили выпить немного алкоголя, можно ли вам это сделать без последствий со стороны закона?</p>
         <ul class="answers">
           <li><label><input type="radio" name="q2" value="да" /> Да</label></li>
           <li><label><input type="radio" name="q2" value="нет" /> Нет</label></li>
         </ul>
       </div>
       <div class="question-block">
-                <p class="question">3. Отдыхая в отеле "все включено" вы решили взять с собой на прогулку по городу напиток из ресторана отеля. Разрешено ли вам это сделать?</p>
+        <p class="question">3. Проходя мимо автомобильной аварии вы решили сделать несколько снимков. Нарушили ли вы этим закон?</p>
         <ul class="answers">
           <li><label><input type="radio" name="q3" value="да" /> Да</label></li>
           <li><label><input type="radio" name="q3" value="нет" /> Нет</label></li>
         </ul>
       </div>
+            <div class="question-block">
+        <p class="question">4. Какой штраф предусмотрен за переход улицы в неположенном месте, если это нарушение приведет к ДТП?</p>
+        <ul class="answers">
+          <li><label><input type="radio" name="q4" value="400" /> 400 дирхамов</label></li>
+          <li><label><input type="radio" name="q4" value="5000" /> 5000 дирхамов</label></li>
+          <li><label><input type="radio" name="q4" value="10000" /> 10 000 дирхамов</label></li>
+          <li><label><input type="radio" name="q4" value="3 месяца" /> 3 месяца тюремного заключения</label></li>
+        </ul>
+      </div>
       <button type="submit">Проверить ответы</button>
-      <p></p>
-      <button><a href="Турция.html">Вернуться к законам</a></button>
+      <p>    </p>
+      <button><a href="Объединённые арабские эмираты.html">Вернуться к законам</a></button>
     </form>
     <div id="result" class="result"></div>
     <div id="explanation1" class="explanation">
-      За неуважение к Мустафа Кемаль Ататюрк могут возникнуть проблемы с законом.
+      Вы не можете сесть в автобус, так как у вас в сумке находится алкоголь, а по законам Объединённых Арабских Эмиратов, провоз алкоголя даже в закрытой сумке в метро и автобусах запрещён.
     </div>
     <div id="explanation2" class="explanation">
-      Вам нельзя сделать фотографию, так как в Турции запрещено фотографировать правительственные здания.
+      Распитие спиртных напитков разрешено на территории отелей, поэтому вы никак не нарушаете закон.
     </div>
     <div id="explanation3" class="explanation">
-      Вынос еды и напитков из ресторанов в отелях с системой «все включено» запрещен.
+      Съёмка автомобильных аварий запрещена в Объединённых Арабских Эмиратах.
+    </div>
+    <div id="explanation4" class="explanation">
+      Штраф за переход улицы в неположенном месте составляет 10000 дирхамов.
     </div>
   </main>
-  <script>
+<script>
   const quizForm = document.getElementById('quiz-form');
   const resultDiv = document.getElementById('result');
   const explanation1 = document.getElementById('explanation1');
   const explanation2 = document.getElementById('explanation2');
   const explanation3 = document.getElementById('explanation3');
-  // Set correct answers for the questions
+  const explanation4 = document.getElementById('explanation4');
+  // Set correct answers for the 4 questions
   const correctAnswers = {
-    q1: 'Мустафа Кемаль Ататюрк',
-    q2: 'нет',
-    q3: 'нет'
+    q1: 'нет',
+    q2: 'да',
+    q3: 'да',
+    q4: '10000'
   };
   quizForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -164,15 +176,16 @@
     const formData = new FormData(quizForm);
     // Clear previous markings and hide explanations
     const labels = quizForm.querySelectorAll('label');
-       labels.forEach(label => {
+    labels.forEach(label => {
       label.classList.remove('correct', 'wrong');
     });
     explanation1.style.display = 'none';
     explanation2.style.display = 'none';
     explanation3.style.display = 'none';
+    explanation4.style.display = 'none';
     Object.entries(correctAnswers).forEach(([question, correctValue]) => {
-      const selectedValue = formData.get(question);
-      // Mark answers: iterate all options of this question
+         const selectedValue = formData.get(question);
+         // Mark answers: iterate all options of this question
       const inputs = quizForm.querySelectorAll(`input[name="${question}"]`);
       inputs.forEach(input => {
         const label = input.closest('label');
@@ -184,7 +197,7 @@
         }
       });
       if (selectedValue === correctValue) {
-               score++;
+        score++;
       }
     });
     resultDiv.textContent = `Вы ответили правильно на ${score} из ${Object.keys(correctAnswers).length} вопросов.`;
@@ -197,6 +210,9 @@
     }
     if (formData.get('q3') !== correctAnswers.q3) {
       explanation3.style.display = 'block';
+    }
+    if (formData.get('q4') !== correctAnswers.q4) {
+      explanation4.style.display = 'block';
     }
   });
 </script>
